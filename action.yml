@@ -1,0 +1,21 @@
+name: 'Readme to Notion Action'
+description: 'Upload your Readme to Notion'
+inputs:
+  notion-token:
+    description: 'Notion token'
+    required: true
+  notion-page-id:
+    description: 'Notion Page Id'
+    required: true
+  file-path:
+    description: 'Markdown file path'
+    required: true
+  static-top-text:
+    description: 'Static text to be shown before Markdown text'
+    required: false
+  static-bottom-text:
+    description: 'Static text to be shown after Markdown text'
+    required: false
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
