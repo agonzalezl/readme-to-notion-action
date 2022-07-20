@@ -1,0 +1,25 @@
+name: Main Workflow
+
+on:
+  workflow_dispatch: # Allow manual trigger
+  push:
+    branches:
+      - 'master'
+    paths:
+      - './README.md'
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Checkout and upload Readme to Notion
+    steps:
+      - name: checkout
+        uses: "actions/checkout@v3.0.2"
+      - name: Upload to Notion
+        uses: agonzalezl/readme-to-notion-action@v1
+        with:
+          static-top-text: '_This documentation is self-generated and will be overwritten. Please do not edit it manually._'
+          static-bottom-text: '_This documentation is self-generated and will be overwritten. Please do not edit it manually._'
+          file-path: './README.md'
+          notion-token: ${{ secrets.NOTION_TOKEN }}
+          notion-page-id: ${{ secrets.NOTION_PAGE_ID }}
