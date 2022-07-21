@@ -14,9 +14,9 @@ jobs:
     name: Checkout and upload Readme to Notion
     steps:
       - name: checkout
-        uses: "actions/checkout@v3.0.2"
+        uses: "actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b"
       - name: Upload to Notion
-        uses: agonzalezl/readme-to-notion-action@v1
+        uses: agonzalezl/readme-to-notion-action@88b6cb8eea354ac61c589f540e40cacadf0c8ecb
         with:
           static-top-text: '_This documentation is self-generated and will be overwritten. Please do not edit it manually._'
           static-bottom-text: '_This documentation is self-generated and will be overwritten. Please do not edit it manually._'
